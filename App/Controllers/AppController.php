@@ -94,4 +94,17 @@ class AppController extends Action {
 
     }
 
+    public function removerTweet() {
+
+        $this->validaAutenticacao();
+
+        $id = isset($_GET['id']) ? $_GET['id'] : '';
+        $removerTweet = Container::getModel('Tweet');
+        $removerTweet->__set('id', $id);
+
+        $removerTweet->remover();
+
+        header('Location: /timeline');
+    }
+
 }

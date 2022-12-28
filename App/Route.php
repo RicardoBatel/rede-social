@@ -61,6 +61,12 @@ class Route extends Bootstrap {
             'action' => 'acao'
         );
 
+        $routes['remover_tweet'] = array(
+            'route' => '/remover_tweet',
+            'controller' => 'AppController',
+            'action' => 'removerTweet'
+        );
+
         $this->setRoutes($routes);
     } 
 }
