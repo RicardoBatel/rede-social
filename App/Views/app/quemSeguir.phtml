@@ -16,44 +16,52 @@
 <div class="container mt-5">
 	<div class="row pt-2">
 		
-		<div class="col-md-3">
+	<div class="col-md-3">
 
-			<div class="perfil">
-				<div class="perfilTopo">
+<div class="perfil">
+	<div class="perfilTopo">
 
-				</div>
+	</div>
 
-				<div class="perfilPainel">
-					
-					<div class="row mt-2 mb-2">
-						<div class="col mb-2">
-							<span class="perfilPainelNome">Nome do Usuário</span>
-						</div>
-					</div>
+	<div class="perfilPainel">
+		
+		<div class="row mt-2 mb-2">
+			<div class="col mb-2">
+				<span class="perfilPainelNome">
+					<?= $this->view->info_usuario['nome'] ?>
+				</span>
+			</div>
+		</div>
 
-					<div class="row mb-2">
+		<div class="row mb-2">
 
-						<div class="col">
-							<span class="perfilPainelItem">Tweets</span><br />
-							<span class="perfilPainelItemValor">0</span>
-						</div>
+			<div class="col">
+				<span class="perfilPainelItem">Tweets</span><br />
+				<span class="perfilPainelItemValor">
+				<?= $this->view->total_tweets['total_tweet'] ?>
+				</span>
+			</div>
 
-						<div class="col">
-							<span class="perfilPainelItem">Seguindo</span><br />
-							<span class="perfilPainelItemValor">0</span>
-						</div>
+			<div class="col">
+				<span class="perfilPainelItem">Seguindo</span><br />
+				<span class="perfilPainelItemValor">
+				<?= $this->view->total_seguindo['total_seguindo'] ?>
+				</span>
+			</div>
 
-						<div class="col">
-							<span class="perfilPainelItem">Seguidores</span><br />
-							<span class="perfilPainelItemValor">0</span>
-						</div>
-
-					</div>
-
-				</div>
+			<div class="col">
+				<span class="perfilPainelItem">Seguidores</span><br />
+				<span class="perfilPainelItemValor">
+				<?= $this->view->total_seguidores['total_seguidores'] ?>
+				</span>
 			</div>
 
 		</div>
+
+	</div>
+</div>
+
+</div>
 
 		<div class="col-md-6">
 			
