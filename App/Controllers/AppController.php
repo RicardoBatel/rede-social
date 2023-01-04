@@ -29,17 +29,21 @@ class AppController extends Action {
         
         //variáveis de páginação
 
-        $total_registros_paginas = 10;
-        $deslocamento = 0;
-        $pagina = 1;
+        $total_registros_paginas = 5;
+        //$deslocamento = 0;
+        $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+        $deslocamento = ($pagina - 1) * $total_registros_paginas;
 
-        //--
+        /*
         $total_registros_paginas = 10;//limit
         $deslocamento = 10;//offset
-        $pagina = 2;
+        $pagina = 2;*/
 
         //$tweets = $tweet->getAll();
         $tweets = $tweet->getPorPagina($total_registros_paginas, $deslocamento);
+        $total_tweets = $tweet->getTotalRegistros();
+        $this->view->total_de_paginas = ceil($total_tweets['total'] / $total_registros_paginas);
+        $this->view->pagina_ativa = $pagina;
 
         $this->view->tweets = $tweets;
 
